@@ -25,7 +25,6 @@ jobs:
         run: uv run behave tests/test_functional/features/
       - name: Run qualite
         run: uv run pytest --cov=formation_mlops_2/ tests/test_unit/ -vv -p no:warnings && ./tests/tests_pyramid.sh
-      - name: Run tests
-        continue-on-error: true # Task is expected to fail (there is a test that trainee will fix"
+      - name: Run architecture tests
         run: uv run pytest tests/test_architecture
 
